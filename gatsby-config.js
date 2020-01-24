@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'Overreacted',
-    author: 'Dan Abramov',
-    description: 'Personal blog by Dan Abramov. I explain with words and code.',
-    siteUrl: 'https://overreacted.io',
+    title: 'pCodeLab',
+    author: 'Emil Trebicka',
+    description:
+      'Personal blog by Emil Trebicka. Daily snapshots from a programmer life.',
+    siteUrl: 'https://blog.pcodelab.com',
     social: {
-      twitter: '@dan_abramov',
+      linkedin: 'https://www.linkedin.com/in/emiltrebicka/',
     },
   },
   pathPrefix: '/',
@@ -80,12 +81,12 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at overreacted.io. You can read it online by <a href="${siteUrl +
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at blog.pcodelab.com. You can read it online by <a href="${siteUrl +
                   edge.node.fields.slug}">clicking here</a>.)</div>
               `;
 
                 let html = edge.node.html;
-                // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
+
                 html = html
                   .replace(/href="\//g, `href="${siteUrl}/`)
                   .replace(/src="\//g, `src="${siteUrl}/`)
@@ -126,7 +127,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Dan Abramov's Overreacted Blog RSS Feed",
+            title: "Emil Trebicka's pCodeLab Blog RSS Feed",
           },
         ],
       },
@@ -134,7 +135,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-ebook`,
       options: {
-        filename: 'overreacted-ebook.epub',
+        filename: 'pcodelab-ebook.epub',
         query: `
           {
             site {
@@ -165,8 +166,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Overreacted`,
-        short_name: `Overreacted`,
+        name: `blog.pcodelab.com`,
+        short_name: `blog.pcodelab.com`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffa7c4`,

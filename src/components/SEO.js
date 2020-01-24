@@ -12,7 +12,7 @@ const query = graphql`
         description
         siteUrl
         social {
-          twitter
+          linkedin
         }
       }
     }
@@ -37,7 +37,7 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
                   title,
                 }
               : {
-                  title: `${siteMetadata.title} — A blog by Dan Abramov`,
+                  title: `${siteMetadata.title} — A blog by Emil Trebicka - Daily snapshots from a programmer life`,
                 })}
             meta={[
               {
